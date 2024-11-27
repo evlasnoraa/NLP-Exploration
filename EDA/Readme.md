@@ -66,7 +66,7 @@ Using a custom preprocessing function, stopwords were removed and words were ste
 
 ## Part C: Review Polarity Analysis
 
-Polarity scores were calculated for each review using 'TextBlob', ranging from -1 to 1:
+Polarity scores were calculated for each review using `TextBlob`, ranging from -1 to 1:
 - **-1**: Indicates negative sentiment.
 - **1**: Indicates positive sentiment.
   
