@@ -20,14 +20,16 @@ The Car Reviews Dataset contains customer reviews for different cars, with ratin
 The dataset is imbalanced, with **Rating 4** comprising more than 50% of the data points. This indicates that customers are mostly satisfied with their car purchases, likely due to significant research undertaken before buying a car.
 
 ![Ratings' Frequency](images/Rating_count.png)
+
 ![Ratings' Frequency bar graph](images/rating_distribution.png)
 
 ### Class-wise Review Lengths
 
 Descriptive statistics were calculated on review lengths, grouped by rating, to analyze if satisfaction levels affect the length of reviews. The box plot below summarizes these statistics:
 
-![Class-wise Review Lengths stats](images/review_lengths_stats.png)
-![Class-wise Review Lengths overlook](images/review_lengths_boxplot.png)
+![Class-wise Review Lengths stats](images/review_length_stats.png)
+
+![Class-wise Review Lengths overlook](images/review_length_boxplot.png)
 
 ---
 
@@ -47,8 +49,11 @@ Using a custom preprocessing function, stopwords were removed and words were ste
 
 #### Visualized using Word Clouds:
 
-![Word Cloud - Rating 4 and 5](images/wordcloud_rating_4_5.png)  
-![Word Cloud - Rating 1 and 2](images/wordcloud_rating_1_2.png)
+![Word Cloud - Rating 1](images/word_cloud_rating_1.png)  
+![Word Cloud - Rating 2](images/word_cloud_rating_2.png)  
+![Word Cloud - Rating 3](images/word_cloud_rating_3.png)  
+![Word Cloud - Rating 4](images/word_cloud_rating_4.png)  
+![Word Cloud - Rating 5](images/word_cloud_rating_5.png)
 
 **Key Observations**:
 -	Words like ‘issue’ and ‘problem’ only appear after Ratings of 3 and lower. 
