@@ -13,16 +13,21 @@ The Car Reviews Dataset contains customer reviews for different cars, with ratin
 - **Columns**:
   - `Rating`: Integer values between 1 and 5.
   - `Review`: Contains text data.
+![First 5 datapoints](images/Data_review.png)
 
 ### Class Frequencies
 
 The dataset is imbalanced, with **Rating 4** comprising more than 50% of the data points. This indicates that customers are mostly satisfied with their car purchases, likely due to significant research undertaken before buying a car.
 
+![Ratings' Frequency](images/Rating_count.png)
+![Ratings' Frequency bar graph](images/rating_distribution.png)
+
 ### Class-wise Review Lengths
 
 Descriptive statistics were calculated on review lengths, grouped by rating, to analyze if satisfaction levels affect the length of reviews. The box plot below summarizes these statistics:
 
-![Class-wise Review Lengths](images/review_lengths_boxplot.png)
+![Class-wise Review Lengths stats](images/review_lengths_stats.png)
+![Class-wise Review Lengths overlook](images/review_lengths_boxplot.png)
 
 ---
 
@@ -32,7 +37,7 @@ Descriptive statistics were calculated on review lengths, grouped by rating, to 
 
 Using a custom preprocessing function, stopwords were removed and words were stemmed to focus on essential terms. Below are the top 20 most frequent words across all reviews:
 
-![Word Frequency](images/top_words_bar_chart.png)
+![Top 20 words](images/top_20_words.png)
 
 **Key Observations**:
 - Words like `drive`, `mile`, `comfort`, and `time` are frequent. However, these results are influenced by the dataset's imbalance, with **Ratings 4 and 5** dominating.
@@ -41,15 +46,14 @@ Using a custom preprocessing function, stopwords were removed and words were ste
 ### Word Frequency by Ratings
 
 #### Visualized using Word Clouds:
-- **Ratings 4 and 5**: Phrases like `fun drive` are prominent.
-- **Ratings 1 and 2**: Negative phrases like `engine issue` and `problem` are observed.
 
 ![Word Cloud - Rating 4 and 5](images/wordcloud_rating_4_5.png)  
 ![Word Cloud - Rating 1 and 2](images/wordcloud_rating_1_2.png)
 
-### Other Insights:
-- Negative ratings (1-3) mention `issue` and `problem` more frequently.
-- Use of bi-grams such as `engine issue` and `fun drive` can improve the quality of sentiment analysis.
+**Key Observations**:
+-	Words like ‘issue’ and ‘problem’ only appear after Ratings of 3 and lower. 
+-	We can see some bi-grams stand out like ‘fun drive’ in Ratings 4 and 5, ‘engine issue’ in Rating 1, etc. This means that use of n-grams could be fruitful for our project.
+-	As the ratings go lower, the relative frequency of the words like cars and vehicles goes up - however, this could be due to the fact that we have significantly less data about the lower ratings.  
 
 ---
 
@@ -58,12 +62,14 @@ Using a custom preprocessing function, stopwords were removed and words were ste
 Polarity scores were calculated for each review using TextBlob, ranging from -1 to 1:
 - **-1**: Indicates negative sentiment.
 - **1**: Indicates positive sentiment.
+  
+![Polarity Distribution](images/polarity_box_plot.png)
 
 ### Observations:
-- The sentiment expressed in reviews often avoids extremes, even for low ratings.
+- Immediately, we can see that multi-class classification is going to be a challenge for this dataset. Even when Rating of 1 is supposed to be the ‘worst’ rating possible, the sentiment expressed by reviewers is not very negative - a burden of professional speech. 
 - Polarity values range between `0` to `0.5`, suggesting challenges in distinguishing ratings.
 
-![Polarity Distribution](images/polarity_distribution.png)
+
 
 ---
 
