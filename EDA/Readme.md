@@ -13,6 +13,8 @@ The Car Reviews Dataset contains customer reviews for different cars, with ratin
 - **Columns**:
   - `Rating`: Integer values between 1 and 5.
   - `Review`: Contains text data.
+
+
 ![First 5 datapoints](images/Data_review.png)
 
 ### Class Frequencies
