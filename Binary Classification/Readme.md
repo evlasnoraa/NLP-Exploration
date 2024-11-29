@@ -341,7 +341,7 @@ We looked at another XGB model with fewer estimators. These are the feature impo
 
 While working with Word2Vec, we realized that feature importance will be lost. And indeed, when we look at the feature importance plot for this model, we can see that the features are replaced with placeholder numbers that don’t really have any interpretability. 
 
-![XGBoost W2V Feature Importance](images/W2B_feat_imp.png)
+![XGBoost W2V Feature Importance](images/W2V_feat_imp.png)
 
 
 ---
