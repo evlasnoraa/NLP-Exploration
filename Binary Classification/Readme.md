@@ -155,10 +155,15 @@ Tree-based algorithms are a bit slower than Linear algorithms. However, the deci
 Just like the previous algorithms, I decided to stick with Sci-kit learn’s `RandomForest` classifier function and used TF-IDF Vectors as input again. Random forest allows for A LOT of parameters to be tuned. To optimize the performance here, I decided to consider the following parameters for tuning:
 
 **N_estimators**: the number of trees created in our forest, 
+
 **max_depth**: The maximum allowed depth of our tree, 
+
 **min_samples_split**: Minimum number of samples required before splitting, 
+
 **min_samples_leaf**: Minimum number of samples required in leaf nodes, 
+
 **max_features**: Maximum number of features considered for splitting data, 
+
 **ngram_max**: ngrams to be considered for feature generation. 
 
 Each one of the above parameters have a dozen values that can be tested out - using `GridSearchCV` could be extremely time consuming, since it will test out `n^m` possibilities where `n` is the number of possible values in each features and `m` is the number of features. Hence, we use a different method to optimize our algorithm - **Bayesian optimization**. 
@@ -166,6 +171,7 @@ Each one of the above parameters have a dozen values that can be tested out - us
 Specifically, we will use the `Optuna` Library and their `TPESampler` which stands for Tree-structure Parzen (TPE) Sampler. The way TPE Approach works is that it takes in a sample space that looks as follows:
 
 `n_estimators` = trial.suggest_int('n_estimators', 100, 1000)
+
 `max_features` = trial.suggest_categorical('max_features', ['sqrt', 'log2'])
 
 So instead of choosing values from a list, we assign an entire uniform distribution of values between a certain range. (Alternatively, we can also assign a list of values, just like before. But `Optuna` applies equal prior probability of being chosen to all items in that list.) From then on, when the model starts training, `TPESampler` takes over and makes the following changes in the search space: uniform → truncated Gaussian mixture, log-uniform → exponentiated truncated Gaussian mixture, categorical → re-weighted categorical. The probability space is built based on observations made in the non-parametric densities. 
