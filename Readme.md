@@ -19,6 +19,8 @@ Each folder in the repository corresponds to a specific phase of the project, wi
 
 **Goal:** To gain insights into the Car Reviews Dataset, which contains customer reviews rated from 1 to 5.
 
+[Click here for EDA Report and Code](https://github.com/evlasnoraa/NLP-Exploration/tree/main/EDA)
+
 ### Dataset Characteristics:
 - Understanding our two columns: `Rating` (1-5) and `Review` (text data).
 - Visualizing imbalanced class distribution, with `Ratings` 4 and 5 dominating.
@@ -38,6 +40,8 @@ Each folder in the repository corresponds to a specific phase of the project, wi
 ## 2. Binary Classification
 
 **Goal:** To classify reviews as either positive or negative, leveraging the imbalanced dataset effectively.
+
+[Click here for Binary Classification Report and Code](https://github.com/evlasnoraa/NLP-Exploration/tree/main/Binary%20Classification)
 
 ### Methodology:
 1. Exploring different ways of splitting data using four different approaches with `Multinomial Naive Bayes` as a baseline.
@@ -59,6 +63,8 @@ Each folder in the repository corresponds to a specific phase of the project, wi
 ## 3. Multi-class Classification
 
 **Goal:** To classify reviews into five distinct ratings, addressing the complexities of class overlap and subjective sentiment.
+
+[Click here for Mutli-class Classification Report and Code](https://github.com/evlasnoraa/NLP-Exploration/tree/main/Multi-class%20Classification)
 
 ### Challenges:
 - Overlapping sentiments in adjacent ratings (e.g., 2 and 3).
